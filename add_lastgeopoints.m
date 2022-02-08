@@ -1,6 +1,6 @@
 %% Definimos la proporción y la altura de los primeros puntos georeferenciados
 clear
-proporcion=1.8547;
+proporcion=2.547;
 altura=1;%La misma de los puntos georeferenciados
 PointCloud=readmatrix("georef_cloud.csv");
 altura=(proporcion+1)*altura;
@@ -17,7 +17,7 @@ side_rigth_vec=side_rigth_vec/norm(side_rigth_vec);
 % temp=[PointCloud(end-288*20+1:end,:);temp+10*siderigth_vec];
 % pcshow(temp)
 height_vec=cross(side_rigth_vec,outter_vec);
-height_vec=height_vec/norm(height_vec);
+height_vec=-height_vec/norm(height_vec);
 %% Procedemos a ubicar los puntos de georeferencia
 punto_inicial=[5.150783356908550e+02,-1.310250370922360e+03,4.082813220179000];
 %elevamos el punto con la altura correspondiente
